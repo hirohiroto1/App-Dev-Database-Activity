@@ -79,8 +79,7 @@ WSGI_APPLICATION = 'orm_project.wsgi.application'
 # or fall back to your local sqlite3 file when you test on your computer.
 DATABASES = {
     'default': dj_database_url.config(
-        default='sqlite:///db.sqlite3',
-        conn_max_age=600
+        default=os.environ.get('DATABASE_URL')
     )
 }
 
